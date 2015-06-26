@@ -1,0 +1,1 @@
+export { default } from 'ember-highlight-code/components/ember-highlight-code';

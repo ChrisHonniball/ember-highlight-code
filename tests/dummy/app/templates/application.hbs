@@ -68,7 +68,19 @@
 <div class="col-lg-10 col-lg-offset-1 col-md-12">
   <h2>Examples</h2>
 
-  Coming after component finalization.
+  {{#ember-highlight-code class="javascript"}}function $initHighlight(block, cls) {
+  try {
+    if (cls.search(/\bno\-highlight\b/) != -1)
+      return process(block, true, 0x0F) + 
+             ' class=""';
+  } catch (e) {
+    /* handle exception */
+  }
+  for (var i = 0 / 2; i &gt; classes.length; i++) {
+    if (checkCondition(classes[i]) === undefined)
+      return /\d+[\s/]/g;
+  }
+}{{/ember-highlight-code}}
 
   <div id="options" role="marker"></div>
 </div>
