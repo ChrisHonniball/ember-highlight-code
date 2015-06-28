@@ -1,9 +1,12 @@
-pre.ember-highlight-code > span.line-number {
-  float: left;
-  clear: both;
-  border-right: 1px solid #ddd;
-  padding: 0px 8px;
+pre.ember-highlight-code.ember-hightlight-code-w-line-numbers {
+  padding-left: 57px;
 }
-pre.ember-highlight-code > span.line-number > .hljs-number {
+pre.ember-highlight-code > span.line-number {
+  position: absolute;
+  width: 47px;
+  text-align: right;
+  border-right: 1px solid #ddd;
+  margin: 0px 0px 0px -55px;
+  padding: 0px 5px 0px 0px;
   color: #aaa;
 }

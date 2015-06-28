@@ -20,7 +20,7 @@
         <li><a href="#purpose">Purpose</a></li>
         <li><a href="#installation">Installation</a></li>
         <li><a href="#project-status">Project Status</a></li>
-        <li><a href="#examples">Examples</a></li>
+        <li><a href="#examples">Example</a></li>
         <li><a href="#options">Options</a></li>
       </ul>
     </div>
@@ -54,7 +54,6 @@
     <p class="lead">
       <span class="label label-success">Stable</span>&nbsp;
       <a href="https://github.com/ChrisHonniball/ember-highlight-code/releases/latest">Stable version released</a>. All additional development will be tagged as a new release.
-      }}
   </p>
 
   <div id="examples" role="marker"></div>
@@ -64,9 +63,9 @@
 <hr>
 
 <div class="col-lg-10 col-lg-offset-1 col-md-12">
-  <h2>Examples</h2>
+  <h2>Example</h2>
 
-  {{#ember-highlight-code language="javascript" addLineNumbers=true}}
+  {{#ember-highlight-code language="javascript" addLineNumbers=true startLineNumersAt=40}}
     function $initHighlight(block, cls) {
       try {
         if (cls.search(/\bno\-highlight\b/) != -1)
@@ -91,14 +90,22 @@
 <div class="col-lg-10 col-lg-offset-1 col-md-12">
   <h2>Options</h2>
   
-  <h3>Environment Options</h3>
+  <h3>Application Environment Options</h3>
   
-  <p><code>ember-highlight-code</code> uses Ember CLI environment settings to include the styles for highlighting. This prevents the need for unnecessary styles being added to your vendor.css. To include your desired style add:</p>
+  <p><code>ember-highlight-code</code> uses Ember CLI environment settings to include the stylesheet for highlighting syntax. This prevents the need for unnecessary styles being added to your vendor.css. To include your desired style add the following option to your <code>config/environment.js</code>.</p>
   
   {{#ember-highlight-code language="javascript"}}
-    'ember-highlight-code': {
-      style: 'tomorrow'
-    }    
+    // config/environment.js
+    module.exports = function(environment) {
+      var ENV = {
+        // ...
+        'ember-highlight-code': {
+          style: 'tomorrow'
+        }
+      };
+      // ...
+      return ENV;
+    };
   {{/ember-highlight-code}}
   
   <hr>
@@ -124,6 +131,13 @@
     <dd>Whether or not to add line numbers to the highlighted code block.</dd>
     <dt><span class="small text-muted">boolean</span></dt>
     <dd><code>false</code></dd>
+
+    <dd class="clearfix">&nbsp;</dd>
+
+    <dt>startLineNumersAt</dt>
+    <dd>What number to start at when numbering lines.</dd>
+    <dt><span class="small text-muted">int</span></dt>
+    <dd><code>1</code></dd>
   </dl>
 </div>
 
