@@ -27,7 +27,7 @@ module.exports = function(environment) {
     },
     
     'ember-highlight-code': {
-      style: 'github-gist'
+      style: 'tomorrow'
     }
   };
 
