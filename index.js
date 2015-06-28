@@ -1,8 +1,6 @@
 /* jshint node: true */
 'use strict';
 
-var funnel = require('broccoli-funnel');
-
 module.exports = {
   name: 'ember-highlight-code',
   
@@ -11,6 +9,12 @@ module.exports = {
     
     var settings = app.project.config()['ember-highlight-code'];
     
+    if(!settings) {
+      settings = {
+        style: 'tomorrow'
+      };
+    }
+    
     if(!settings.style) {
       settings.style = 'tomorrow';
     }
@@ -18,5 +22,7 @@ module.exports = {
     // Import the correct JS for chosen
     app.import(app.bowerDirectory + '/highlightjs/highlight.pack.js');
     app.import(app.bowerDirectory + '/highlightjs/styles/' + settings.style + '.css');
+    
+    app.import('vendor/styles/ember-highlight-code.css');
   }
 };

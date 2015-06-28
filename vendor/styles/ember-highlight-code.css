@@ -1,0 +1,9 @@
+pre.ember-highlight-code > span.line-number {
+  float: left;
+  clear: both;
+  border-right: 1px solid #ddd;
+  padding: 0px 8px;
+}
+pre.ember-highlight-code > span.line-number > .hljs-number {
+  color: #aaa;
+}

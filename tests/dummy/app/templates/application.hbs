@@ -30,14 +30,14 @@
 <div class="col-lg-10 col-lg-offset-1 col-md-12">
   <h2>Purpose</h2>
   <p class="lead">
-    <code>ember-highlight-code</code> allows code and pre sections to use highlight.js syntax highlighting.
+    <code>ember-highlight-code</code> allows code sections to use highlight.js syntax highlighting.
   </p>
 
   <div id="installation" role="marker"></div>
 </div>
 
 <div class="clearfix"></div>
-<hr class="row">
+<hr>
 
 <div class="col-lg-10 col-lg-offset-1 col-md-12">
   <h2>Installation</h2>
@@ -47,80 +47,88 @@
 </div>
 
 <div class="clearfix"></div>
-<hr class="row">
+<hr>
 
 <div class="col-lg-10 col-lg-offset-1 col-md-12">
   <h2>Project Status</h2>
     <p class="lead">
-    <span class="label label-danger">Rapid Development</span>&nbsp;
-    This addon <em>will</em> change rapidly at this stage and <em>may</em> not be fully functional.
-
-    {{!
-    <span class="label label-success">Stable</span>&nbsp;
-    <a href="https://github.com/ChrisHonniball/ember-highlight-code/releases/latest">Stable version released</a>. All additional development will be tagged as a new release.
-    }}
+      <span class="label label-success">Stable</span>&nbsp;
+      <a href="https://github.com/ChrisHonniball/ember-highlight-code/releases/latest">Stable version released</a>. All additional development will be tagged as a new release.
+      }}
   </p>
 
   <div id="examples" role="marker"></div>
 </div>
 
 <div class="clearfix"></div>
-<hr class="row">
+<hr>
 
 <div class="col-lg-10 col-lg-offset-1 col-md-12">
   <h2>Examples</h2>
 
-  {{#ember-highlight-code class="javascript"}}function $initHighlight(block, cls) {
-  try {
-    if (cls.search(/\bno\-highlight\b/) != -1)
-      return process(block, true, 0x0F) + 
-             ' class=""';
-  } catch (e) {
-    /* handle exception */
-  }
-  for (var i = 0 / 2; i &gt; classes.length; i++) {
-    if (checkCondition(classes[i]) === undefined)
-      return /\d+[\s/]/g;
-  }
-}{{/ember-highlight-code}}
+  {{#ember-highlight-code language="javascript" addLineNumbers=true}}
+    function $initHighlight(block, cls) {
+      try {
+        if (cls.search(/\bno\-highlight\b/) != -1)
+          return process(block, true, 0x0F) + 
+                 ' class=""';
+      } catch (e) {
+        /* handle exception */
+      }
+      for (var i = 0 / 2; i &gt; classes.length; i++) {
+        if (checkCondition(classes[i]) === undefined)
+          return /\d+[\s/]/g;
+      }
+    }
+  {{/ember-highlight-code}}
 
   <div id="options" role="marker"></div>
 </div>
 
 <div class="clearfix"></div>
-<hr class="row">
+<hr>
 
 <div class="col-lg-10 col-lg-offset-1 col-md-12">
   <h2>Options</h2>
+  
+  <h3>Environment Options</h3>
+  
+  <p><code>ember-highlight-code</code> uses Ember CLI environment settings to include the styles for highlighting. This prevents the need for unnecessary styles being added to your vendor.css. To include your desired style add:</p>
+  
+  {{#ember-highlight-code language="javascript"}}
+    'ember-highlight-code': {
+      style: 'github-gist'
+    }    
+  {{/ember-highlight-code}}
+  
+  <hr>
+  
+  <dl class="dl-horizontal">
+    <dt>style</dt>
+    <dd>The code highlight style you want <code>ember-highlight-code</code> to use. To use a style, include the <em>lower-case dasherized</em> style name from the following demo: <a href="https://highlightjs.org/static/demo/" target="_blank">highlight.js demo</a></dd>
+    <dt><span class="small text-muted">string</span></dt>
+    <dd><code>"github-gist"</code></dd>
+  </dl>
 
-  <table class="table table-condensed">
-    <thead>
-      <tr>
-        <th style="width: 25%;">Param</th>
-        <th style="width: 15%;">Default <span class="small text-muted">type</span></th>
-        <th>Description</th>
-      </tr>
-    </thead>
+  <h3>Component Options</h3>
+  <hr>
+  <dl class="dl-horizontal">
+    <dt>language</dt>
+    <dd>The syntax for the code block. Available syntax: <a href="https://highlightjs.org/static/demo/" target="_blank">highlight.js demo</a></dd>
+    <dt><span class="small text-muted">string</span></dt>
+    <dd><code>""</code></dd>
 
-    <tbody>
-      <tr>
-        <td colspan="3"><div class="text-center">No options currently available</div></td>
-      </tr>
-      {{!
-      <tr>
-        <th><code>phone</code></th>
-        <td><code>""</code> <span class="small text-muted">int or string</span></td>
-        <td>The phone number to be formatted.</td>
-      </tr>
-      }}
-    </tbody>
+    <dd class="clearfix">&nbsp;</dd>
 
-    <tfoot><tr><td colspan="3"></td></tr></tfoot>
-  </table>
+    <dt>addLineNumbers</dt>
+    <dd>Whether or not to add line numbers to the highlighted code block.</dd>
+    <dt><span class="small text-muted">boolean</span></dt>
+    <dd><code>false</code></dd>
+  </dl>
 </div>
 
 <div class="clearfix"></div>
-<hr class="row">
+<hr>
 
 <div class="col-xs-12 text-center lead">
   Created by <a href="https://github.com/ChrisHonniball">@ChrisHonniball</a>
