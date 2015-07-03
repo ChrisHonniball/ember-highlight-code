@@ -47,6 +47,6 @@
   },
   "ember-addon": {
     "configPath": "tests/dummy/config",
-    "demoUrl": "https://chrishonniball.github.io/ember-highlight-code"
+    "demoURL": "https://chrishonniball.github.io/ember-highlight-code"
   }
 }
