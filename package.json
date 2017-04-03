@@ -1,6 +1,6 @@
 {
   "name": "ember-highlight-code",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Use highlight.js in your ember templates.",
   "keywords": [
     "ember-addon",
