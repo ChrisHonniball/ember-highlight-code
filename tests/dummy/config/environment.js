@@ -1,33 +1,25 @@
-/* jshint node: true */
+/* eslint-env node */
 
 module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'dummy',
     environment: environment,
-    baseURL: '/',
+    rootURL: '/',
     locationType: 'auto',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
         // e.g. 'with-controller': true
+      },
+      EXTEND_PROTOTYPES: {
+        // Prevent Ember Data from overriding Date.parse.
+        Date: false
       }
     },
-    contentSecurityPolicy: {
-      'default-src': "'none'",
-      'script-src': "'self' maxcdn.bootstrapcdn.com",
-      'font-src': "'self' fonts.gstatic.com maxcdn.bootstrapcdn.com",
-      'connect-src': "'self'",
-      'img-src': "'self'",
-      'style-src': "'self' 'unsafe-inline' fonts.googleapis.com maxcdn.bootstrapcdn.com",
-      'media-src': "'self'"
-    },
+
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
-    },
-    
-    'ember-highlight-code': {
-      style: 'tomorrow'
     }
   };
 
@@ -41,7 +33,6 @@ module.exports = function(environment) {
 
   if (environment === 'test') {
     // Testem prefers this...
-    ENV.baseURL = '/';
     ENV.locationType = 'none';
 
     // keep test console output quieter
@@ -52,7 +43,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.baseURL = '/ember-highlight-code';
+
   }
 
   return ENV;
