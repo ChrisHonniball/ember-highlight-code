@@ -1,4 +1,7 @@
 module.exports = {
+  globals: {
+    hljs: true
+  },
   root: true,
   parserOptions: {
     ecmaVersion: 6,
